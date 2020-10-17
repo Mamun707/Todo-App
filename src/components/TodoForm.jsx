@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 function TodoForm(props) {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(props.edit ? props.edit.value : "");
+  const inputRef = useRef(null);
+  useEffect(() => {
+    inputRef.current.focus();
+  });
 
   const handleChange = (e) => {
     setInput(e.target.value);
@@ -16,15 +20,33 @@ function TodoForm(props) {
   };
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Enter Daily Task"
-        name="text"
-        value={input}
-        className="todo-input"
-        onChange={handleChange}
-      />
-      <button className="todo-button">Add Todo</button>
+      {props.edit ? (
+        <>
+          <input
+            type="text"
+            placeholder="Update Task"
+            name="text"
+            value={input}
+            className="todo-input"
+            onChange={handleChange}
+            ref={inputRef}
+          />
+          <button className="todo-button">Update</button>
+        </>
+      ) : (
+        <>
+          <input
+            type="text"
+            placeholder="Enter Daily Task"
+            name="text"
+            value={input}
+            className="todo-input"
+            onChange={handleChange}
+            ref={inputRef}
+          />
+          <button className="todo-button">Add Todo</button>
+        </>
+      )}
     </form>
   );
 }
