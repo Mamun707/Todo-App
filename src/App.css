@@ -45,7 +45,7 @@ h1 {
   outline: none;
   width: 320px;
   background: transparent;
-  color: #fff;
+  color: rgb(19, 97, 67);
 }
 
 .todo-input::placeholder {
