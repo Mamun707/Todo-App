@@ -6,11 +6,11 @@
     "Lucida Sans", Arial, sans-serif;
 }
 body {
-  background: #808080; /*linear-gradient(
+  background: linear-gradient(
     90deg,
-    rgba(48, 16, 255, 1) 0%,
-    rgba(100, 115, 255, 1) 100%
-  );*/
+    rgba(16, 88, 79, 0.404) 0%,
+    rgb(25, 136, 99) 100%
+  );
 }
 .todo-app {
   display: flex;
@@ -88,11 +88,7 @@ h1 {
   align-items: center;
   margin: 4px auto;
   color: #fff;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 118, 20, 1) 0%,
-    rgba(255, 84, 17, 1) 100%
-  );
+  background: linear-gradient(90deg, rgb(8, 119, 77) 0%, rgb(10, 85, 56) 100%);
 
   padding: 16px;
   border-radius: 5px;
